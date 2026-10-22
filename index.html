@@ -161,10 +161,14 @@ td{padding:12px 0;border-bottom:1px solid #f0ece2}td.n,th.n{text-align:right}
 <div class="toast" id="toast"></div>
 
 <script>
-// Paste your Stripe Payment Links here. Set each link's "after payment" redirect to
+// Stripe Payment Links. Each link's "after payment" redirect is
 // https://advaynathany.github.io/billfold/?session_id={CHECKOUT_SESSION_ID}
+// These are sandbox (test_) links; swap in the live ones once the Stripe account is activated.
 // While both are empty, the Pro window says checkout is opening soon.
-const STRIPE_LINKS = { monthly: "", lifetime: "" };
+const STRIPE_LINKS = {
+  monthly: "https://buy.stripe.com/test_00wfZafIO1wNdXracpcZa00",
+  lifetime: "https://buy.stripe.com/test_4gMfZafIO7Vb9Hb3O1cZa01"
+};
 const COLORS = ["#1f5f4a","#16140f","#2b4c9b","#9b2b4c","#c26a1b","#5b3fa0"];
 const $ = id => document.getElementById(id);
 const store = { get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}} };
