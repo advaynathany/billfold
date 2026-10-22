@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Invoice Generator — Make a PDF Invoice in 30 Seconds | Billfold</title>
+<meta name="description" content="Free online invoice generator. Fill in your details, see a live preview, and download a professional PDF invoice. No signup, and your data never leaves your browser.">
+<link rel="canonical" href="https://advaynathany.github.io/billfold/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1f5f4a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Billfold">
+<meta property="og:title" content="Billfold — Free Invoice Generator">
+<meta property="og:description" content="Make a professional PDF invoice in 30 seconds. No signup, nothing leaves your browser.">
+<meta property="og:url" content="https://advaynathany.github.io/billfold/">
+<meta property="og:image" content="https://advaynathany.github.io/billfold/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Billfold — Free Invoice Generator">
+<meta name="twitter:description" content="Make a professional PDF invoice in 30 seconds. No signup, nothing leaves your browser.">
+<meta name="twitter:image" content="https://advaynathany.github.io/billfold/og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Billfold","url":"https://advaynathany.github.io/billfold/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","description":"Free online invoice generator with live preview and PDF export.","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"6","priceCurrency":"USD"},{"@type":"Offer","name":"Lifetime","price":"49","priceCurrency":"USD"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is Billfold really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can create and download unlimited invoices for free. Pro removes the footer and unlocks brand colors."}},
+{"@type":"Question","name":"Do I need an account?","acceptedAnswer":{"@type":"Answer","text":"No. There is no signup. Drafts are saved in your own browser."}},
+{"@type":"Question","name":"Is my invoice data private?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything runs in your browser. Your invoice details are never uploaded to a server."}},
+{"@type":"Question","name":"How do I save my invoice as a PDF?","acceptedAnswer":{"@type":"Answer","text":"Click Download PDF, then choose Save as PDF in the print dialog. Only the invoice is printed."}},
+{"@type":"Question","name":"Which currencies are supported?","acceptedAnswer":{"@type":"Answer","text":"US dollar, euro, British pound, Indian rupee and Japanese yen."}}]}]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ea;--ink:#16140f;--mute:#6b6658;--line:#ddd6c6;--card:#fffdf8;--acc:#1f5f4a;--acc2:#e8b04a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;border-bottom:1px solid var(--line)}
+.logo{font:700 22px Fraunces,serif;letter-spacing:-.5px}.logo b{color:var(--acc)}
+.btn{border:0;border-radius:10px;padding:10px 16px;font:600 14px Inter;cursor:pointer;background:var(--ink);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.pro{background:var(--acc2);color:var(--ink)}
+.hero{padding:48px 28px 24px;max-width:1200px;margin:auto}
+.hero h1{font:700 clamp(32px,5vw,56px)/1.05 Fraunces,serif;margin:0 0 12px;letter-spacing:-1.5px}
+.hero p{color:var(--mute);max-width:560px;margin:0}
+.app{display:grid;grid-template-columns:400px 1fr;gap:24px;max-width:1200px;margin:24px auto 60px;padding:0 28px}
+@media(max-width:900px){.app{grid-template-columns:1fr;padding:0 16px}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.panel h3{font:600 12px Inter;text-transform:uppercase;letter-spacing:1px;color:var(--mute);margin:18px 0 8px}
+.panel h3:first-child{margin-top:0}
+input,textarea,select{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font:14px Inter;background:#fff;color:var(--ink);margin-bottom:8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.item{display:grid;grid-template-columns:1fr 54px 80px 26px;gap:6px}.item input{margin-bottom:6px}
+.x{background:none;border:0;color:var(--mute);cursor:pointer;font-size:18px}
+.paper{background:#fff;border-radius:6px;padding:56px;box-shadow:0 20px 60px -20px rgba(0,0,0,.18);min-height:900px;position:relative;overflow:hidden}
+.paper .top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--tc);padding-bottom:24px}
+.paper h2{font:700 40px Fraunces,serif;margin:0;color:var(--tc);letter-spacing:-1px}
+.paper .meta{text-align:right;color:var(--mute);font-size:13px}
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0}
+.parties small{color:var(--mute);text-transform:uppercase;letter-spacing:1px;font-size:11px}
+.parties div{white-space:pre-line}
+table{width:100%;border-collapse:collapse}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--mute);padding:8px 0;border-bottom:1px solid var(--line)}
+td{padding:12px 0;border-bottom:1px solid #f0ece2}td.n,th.n{text-align:right}
+.totals{margin-left:auto;width:260px;margin-top:20px}.totals div{display:flex;justify-content:space-between;padding:4px 0}
+.totals .grand{font:700 22px Fraunces,serif;border-top:2px solid var(--tc);margin-top:8px;padding-top:10px;color:var(--tc)}
+.notes{margin-top:40px;color:var(--mute);font-size:13px;white-space:pre-line}
+.wm{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:11px;color:#b9b2a2}
+.swatches{display:flex;gap:8px;margin-bottom:8px}.sw{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.sw.lock{opacity:.35;position:relative}
+.pricing{max-width:1200px;margin:0 auto 80px;padding:0 28px}
+.pricing h2{font:700 36px Fraunces,serif;letter-spacing:-1px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}@media(max-width:900px){.tiers{grid-template-columns:1fr}}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}.tier.hot{border:2px solid var(--acc);}
+.tier .p{font:700 40px Fraunces,serif}.tier ul{padding-left:18px;color:var(--mute)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:600;cursor:pointer}.faq details p{color:var(--mute);margin:8px 0 0}
+.modal{position:fixed;inset:0;background:rgba(20,18,12,.5);display:none;place-items:center;z-index:9}.modal.on{display:grid}
+.modal .panel{max-width:420px;text-align:center}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;opacity:0;transition:.3s}.toast.on{opacity:1}
+@media print{header,footer,.hero,.panel.editor,.pricing,.toast{display:none!important}.app{display:block;margin:0;padding:0}.paper{box-shadow:none;padding:30px}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">bill<b>fold</b></div>
+  <div style="display:flex;gap:8px">
+    <button class="btn ghost" onclick="saveDraft()">Save</button>
+    <button class="btn" onclick="exportPDF()">Download PDF</button>
+    <button class="btn pro" id="proBtn" onclick="openPro()">Go Pro</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Get paid faster.<br>Invoices that look expensive.</h1>
+  <p>A free invoice generator for freelancers and small businesses. Fill the left, watch the right, and download a polished PDF invoice in one click. No account, and no data leaves your browser.</p>
+</section>
+
+<main class="app">
+  <div class="panel editor">
+    <h3>Brand</h3>
+    <div class="swatches" id="swatches"></div>
+    <h3>From</h3>
+    <input id="fromName" placeholder="Your name / business">
+    <textarea id="fromAddr" rows="2" placeholder="Address, email"></textarea>
+    <h3>Bill to</h3>
+    <input id="toName" placeholder="Client name">
+    <textarea id="toAddr" rows="2" placeholder="Client address"></textarea>
+    <h3>Details</h3>
+    <div class="row"><input id="num" placeholder="Invoice #"><select id="cur"><option>$</option><option>€</option><option>£</option><option>₹</option><option>¥</option></select></div>
+    <div class="row"><input id="date" type="date"><input id="due" type="date"></div>
+    <h3>Line items</h3>
+    <div id="items"></div>
+    <button class="btn ghost" style="width:100%" onclick="addItem()">+ Add item</button>
+    <h3>Tax & discount</h3>
+    <div class="row"><input id="tax" type="number" placeholder="Tax %"><input id="disc" type="number" placeholder="Discount %"></div>
+    <h3>Notes / payment</h3>
+    <textarea id="notes" rows="3" placeholder="Bank details, Venmo, thanks!"></textarea>
+  </div>
+
+  <div class="paper" id="paper">
+    <div class="top">
+      <div><h2>Invoice</h2><div id="pFrom" style="margin-top:8px;font-weight:600"></div><div id="pFromAddr" style="color:var(--mute);font-size:13px;white-space:pre-line"></div></div>
+      <div class="meta"><div><b id="pNum"></b></div><div>Issued <span id="pDate"></span></div><div>Due <span id="pDue"></span></div></div>
+    </div>
+    <div class="parties"><div><small>Bill to</small><br><b id="pTo"></b><div id="pToAddr" style="color:var(--mute)"></div></div>
+      <div style="text-align:right"><small>Amount due</small><div id="pBig" style="font:700 34px Fraunces,serif;color:var(--tc)"></div></div></div>
+    <table><thead><tr><th>Description</th><th class="n">Qty</th><th class="n">Rate</th><th class="n">Amount</th></tr></thead><tbody id="pItems"></tbody></table>
+    <div class="totals"><div><span>Subtotal</span><span id="pSub"></span></div><div id="pDiscRow"><span>Discount</span><span id="pDisc"></span></div><div id="pTaxRow"><span>Tax</span><span id="pTax"></span></div><div class="grand"><span>Total</span><span id="pTotal"></span></div></div>
+    <div class="notes" id="pNotes"></div>
+    <div class="wm" id="wm">Made with Billfold · advaynathany.github.io/billfold</div>
+  </div>
+</main>
+
+<section class="pricing">
+  <h2>Simple pricing</h2>
+  <div class="tiers">
+    <div class="tier"><b>Free</b><div class="p">$0</div><ul><li>Unlimited invoices</li><li>PDF export</li><li>1 brand color</li><li>Billfold footer</li></ul></div>
+    <div class="tier hot"><b>Pro</b><div class="p">$6<small style="font-size:16px">/mo</small></div><ul><li>Remove footer</li><li>All brand colors</li><li>Saved clients & drafts</li><li>Auto-numbering</li></ul><button class="btn" onclick="openPro()">Start Pro</button></div>
+    <div class="tier"><b>Lifetime</b><div class="p">$49</div><ul><li>Everything in Pro</li><li>Forever</li><li>Early features</li></ul><button class="btn ghost" onclick="openPro()">Buy once</button></div>
+  </div>
+</section>
+
+<section class="pricing faq">
+  <h2>Questions</h2>
+  <details open><summary>Is Billfold really free?</summary><p>Yes. You can create and download unlimited invoices for free. Pro removes the footer and unlocks brand colors.</p></details>
+  <details><summary>Do I need an account?</summary><p>No. There is no signup. Drafts are saved in your own browser.</p></details>
+  <details><summary>Is my invoice data private?</summary><p>Yes. Everything runs in your browser. Your invoice details are never uploaded to a server.</p></details>
+  <details><summary>How do I save my invoice as a PDF?</summary><p>Click Download PDF, then choose Save as PDF in the print dialog. Only the invoice is printed.</p></details>
+  <details><summary>Which currencies are supported?</summary><p>US dollar, euro, British pound, Indian rupee and Japanese yen.</p></details>
+</section>
+<footer style="text-align:center;color:var(--mute);font-size:13px;padding:0 16px 40px">Billfold · free invoice generator · © 2026</footer>
+
+<div class="modal" id="modal"><div class="panel">
+  <h2 style="font:700 28px Fraunces,serif;margin:0 0 8px">Billfold Pro</h2>
+  <p style="color:var(--mute)">Remove the footer and unlock every brand color.</p>
+  <div id="buyBtns">
+    <button class="btn pro" style="width:100%;margin-bottom:8px" onclick="checkout('monthly')">$6 / month</button>
+    <button class="btn ghost" style="width:100%" onclick="checkout('lifetime')">$49 lifetime</button>
+  </div>
+  <p id="soon" style="display:none;color:var(--mute)">Pro checkout is opening soon. Everything else is free to use now.</p>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// Paste your Stripe Payment Links here. Set each link's "after payment" redirect to
+// https://advaynathany.github.io/billfold/?session_id={CHECKOUT_SESSION_ID}
+// While both are empty, the Pro window says checkout is opening soon.
+const STRIPE_LINKS = { monthly: "", lifetime: "" };
+const COLORS = ["#1f5f4a","#16140f","#2b4c9b","#9b2b4c","#c26a1b","#5b3fa0"];
+const $ = id => document.getElementById(id);
+const store = { get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}} };
+let pro = store.get("bf_pro") === true;
+let color = COLORS[0];
+let items = [];
+
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1800)}
+function money(n){return $("cur").value + n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function renderSwatches(){
+  $("swatches").innerHTML = COLORS.map((c,i)=>`<div class="sw ${!pro&&i>0?'lock':''}" style="background:${c}" onclick="pick(${i})" title="${!pro&&i>0?'Pro':''}"></div>`).join("");
+}
+function pick(i){ if(!pro && i>0){openPro();return} color=COLORS[i]; render() }
+
+function renderItems(){
+  $("items").innerHTML = items.map((it,i)=>`<div class="item">
+    <input value="${esc(it.d)}" placeholder="Description" oninput="items[${i}].d=this.value;render()">
+    <input type="number" value="${it.q}" oninput="items[${i}].q=+this.value;render()">
+    <input type="number" value="${it.r}" oninput="items[${i}].r=+this.value;render()">
+    <button class="x" onclick="items.splice(${i},1);renderItems();render()">×</button></div>`).join("");
+}
+function addItem(){items.push({d:"",q:1,r:0});renderItems();render()}
+
+function fmtDate(v){return v?new Date(v+"T00:00").toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"}):"—"}
+
+function render(){
+  $("paper").style.setProperty("--tc",color);
+  $("pFrom").textContent=$("fromName").value||"Your Business";
+  $("pFromAddr").textContent=$("fromAddr").value;
+  $("pTo").textContent=$("toName").value||"Client";
+  $("pToAddr").textContent=$("toAddr").value;
+  $("pNum").textContent="#"+($("num").value||"0001");
+  $("pDate").textContent=fmtDate($("date").value);
+  $("pDue").textContent=fmtDate($("due").value);
+  $("pItems").innerHTML=items.map(it=>`<tr><td>${esc(it.d)||"—"}</td><td class="n">${it.q}</td><td class="n">${money(it.r)}</td><td class="n">${money(it.q*it.r)}</td></tr>`).join("");
+  const sub=items.reduce((a,it)=>a+it.q*it.r,0);
+  const disc=sub*(+$("disc").value||0)/100, tax=(sub-disc)*(+$("tax").value||0)/100, total=sub-disc+tax;
+  $("pSub").textContent=money(sub);$("pDisc").textContent="−"+money(disc);$("pTax").textContent=money(tax);
+  $("pDiscRow").style.display=disc?"flex":"none";$("pTaxRow").style.display=tax?"flex":"none";
+  $("pTotal").textContent=money(total);$("pBig").textContent=money(total);
+  $("pNotes").textContent=$("notes").value;
+  $("wm").style.display=pro?"none":"block";
+  $("proBtn").textContent=pro?"Pro ✓":"Go Pro";
+}
+
+function fields(){return ["fromName","fromAddr","toName","toAddr","num","cur","date","due","tax","disc","notes"]}
+function saveDraft(){const d={items,color};fields().forEach(f=>d[f]=$(f).value);store.set("bf_draft",d);toast("Draft saved")}
+function loadDraft(){
+  const d=store.get("bf_draft");
+  const today=new Date(), due=new Date(Date.now()+14*864e5), iso=x=>x.toISOString().slice(0,10);
+  if(d){fields().forEach(f=>$(f).value=d[f]??"");items=d.items||[];color=d.color||color}
+  else{
+    $("fromName").value="Studio Nathany";$("fromAddr").value="Berkeley, CA\nhello@studio.dev";
+    $("toName").value="Acme Robotics";$("toAddr").value="1 Market St\nSan Francisco, CA";
+    $("num").value="2026-001";$("date").value=iso(today);$("due").value=iso(due);$("tax").value=8.5;
+    $("notes").value="Payment due in 14 days. Thank you for your business!";
+    items=[{d:"Landing page design",q:1,r:1800},{d:"Frontend build (hours)",q:24,r:95},{d:"Hosting setup",q:1,r:150}];
+  }
+  if(!pro) color=COLORS[0];
+}
+function exportPDF(){
+  if(pro){ const n=+((($("num").value.match(/(\d+)$/)||[])[1])||0); store.set("bf_lastnum",n) }
+  window.print();
+}
+function openPro(){
+  if(pro){toast("You're on Pro");return}
+  const live=STRIPE_LINKS.monthly||STRIPE_LINKS.lifetime;
+  $("buyBtns").style.display=live?"block":"none";$("soon").style.display=live?"none":"block";
+  $("modal").classList.add("on");
+}
+$("modal").onclick=e=>{if(e.target.id==="modal")e.target.classList.remove("on")};
+function checkout(plan){const url=STRIPE_LINKS[plan];if(url)location.href=url}
+// Stripe redirects back with ?session_id=cs_... after a successful payment.
+(function unlockFromCheckout(){
+  const sid=new URLSearchParams(location.search).get("session_id");
+  if(sid&&sid.startsWith("cs_")){pro=true;store.set("bf_pro",true);history.replaceState(null,"",location.pathname);setTimeout(()=>toast("Pro unlocked ✨ Thank you!"),300)}
+})();
+
+fields().forEach(f=>$(f).addEventListener("input",render));
+loadDraft();renderSwatches();renderItems();render();
+</script>
+</body>
+</html>
